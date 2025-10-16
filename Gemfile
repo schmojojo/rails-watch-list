@@ -2,6 +2,9 @@ source "https://rubygems.org"
 
 ruby "3.3.5"
 
+#simple_form
+gem "simple_form", "~> 5.3"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.2"
 
