@@ -5,15 +5,16 @@ class Movie < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :overview, presence: true
 
-  # Optional: prevent deleting a movie if it has bookmarks
+  # Prevent destroying a movie if it has bookmarks
   before_destroy :check_for_bookmarks
 
   private
 
   def check_for_bookmarks
     if bookmarks.exists?
+      # This ensures destroy returns false
       errors.add(:base, "Cannot delete movie with bookmarks")
-      throw(:abort)
+      throw(:abort)   # cancels the destroy
     end
   end
 end
