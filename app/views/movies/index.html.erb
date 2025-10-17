@@ -1,0 +1,27 @@
+<h1 class="text-center mb-5" id="movies-title">Top-Rated Movies</h1>
+
+
+<div class="container-custom d-flex justify-content-center mb-5">
+    <%= link_to "View Lists", lists_path, class: "btn btn-success" %>
+</div>
+
+<div class="card-grid container-custom">
+
+  <% @movies.each do |movie| %>
+    <div class="movie-card">
+      <%= image_tag movie.poster_url %>
+      <div class="movie-card-body">
+        <h5><%= movie.title %></h5>
+        <p><%= truncate(movie.overview, length: 80) %></p>
+        <span class="rating">⭐ <%= movie.rating %></span>
+                    <div>
+                    <%= form_with url: list_bookmarks_path(:list_id), method: :post do |f| %>
+                      <%= hidden_field_tag :movie_id, movie.id %>
+                      <%= select_tag :list_id, options_from_collection_for_select(@lists, :id, :name), prompt: "Choose list" %>
+                      <%= f.submit "Add", class: "btn btn-sm btn-primary" %>
+                    <% end %>
+                    </div>
+      </div>
+    </div>
+  <% end %>
+</div>

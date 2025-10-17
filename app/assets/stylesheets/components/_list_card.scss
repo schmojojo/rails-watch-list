@@ -1,0 +1,23 @@
+.list-card {
+  border-radius: $border-radius-lg;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+  }
+
+  .card-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: $primary;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+  }
+}

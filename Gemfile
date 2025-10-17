@@ -2,7 +2,16 @@ source "https://rubygems.org"
 
 ruby "3.3.5"
 
-#simple_form
+# SCSS
+gem "sassc-rails"
+
+# Bootstrap
+gem "bootstrap", "~> 5.3.3"
+
+# Font Awesome
+gem "font-awesome-sass", "~> 6.2.1"
+
+# Simple_form
 gem "simple_form", "~> 5.3"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
